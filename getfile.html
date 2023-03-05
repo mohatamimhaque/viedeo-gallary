@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+
+
+<input type="file" id="file-input" multiple>
+
+
+<textarea style='margin-top:10px' name="" id="output" cols="30" rows="10">
+  
+</textarea>
+<script>
+  const fileInput = document.getElementById("file-input");
+  const output = document.getElementById("output");
+  
+  
+  var sss = '';
+  fileInput.addEventListener("change", function() {
+
+    const fileNames = [];
+
+    // loop through each file and get the file names
+    
+    for (let i = 0; i < fileInput.files.length; i++) {
+      const filePath = fileInput.files[i].webkitRelativePath || fileInput.files[i].name;
+      const arr = filePath.split(".mp4");
+      sss += arr[0];
+      sss += '///';
+    }
+
+    output.innerHTML  = sss;
+ 
+  });
+  
+  
+</script>
+
+
+
+    <script>
+    
+
+  </script>
+</body>
+</html>
